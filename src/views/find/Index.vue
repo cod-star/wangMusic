@@ -20,11 +20,12 @@ export default {
   components: {
     //  New,
     FindNav,
-     Recomm
+     Recomm,
   },
   data() {
     return {
       news: {},
+       
     };
   },
 

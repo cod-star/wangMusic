@@ -1,38 +1,32 @@
 <template>
-  <div class="left-item">
+   <div class="left-item">
    <left>
-     <div slot="leftNav" class="left-nav">入住歌手
+     <div slot="leftNav" class="left-nav">热门主播
        <div class="fenge"></div>
      </div>
-     <div slot="leftConter" class="left-right">查看全部></div>
      <div slot="conter">
-       <div v-for="(item,index) in leftconter" class="conter">
+       <div v-for="(item,index) in leftfooters" class="conter">
          <a href="">
            <img :src="item.img" alt="">
            <span>{{item.name}}</span>
-           <p>{{item.conter}}</p>
          </a>
+          <p>{{item.conter}}</p>
        </div>
      </div>
    </left>
-   <div class="but">
-     <a href="">
-         <p>申请成为网易音乐人</p>
-     </a>
    </div>
-  </div>
 </template>
 <script>
 import Left from 'components/common/leftrecomm/Left'
 
 export default {
-  name: 'LeftItem',
+  name: 'LeftFooter',
   components: {
     Left
   },
   props: {
-    leftconter: {
-      type:Array,
+    leftfooters: {
+      type: Array,
       default(){
         return []
       }
@@ -47,6 +41,7 @@ a{
 
 .left-item {
  position: relative;
+ top: 30px;
  border-top: none;
  border-bottom: none;
 }
@@ -75,62 +70,40 @@ a{
 
 .conter {
   position: relative;
-  top: 10px;
+  top: 50px;
   left: 18px;
   width: 215px;
-  height: 60px;
-  margin: 20px 0;
-  background: rgb(243, 243, 243);
-  border: 1px solid #cccccc;
+  height: 50px;
 }
 
-.conter:hover {
-  background: #ececec;
+.conter img {
+  width: 40px;
+  height: 40px;
 }
 
 .conter span {
   position: relative;
-  top: -40px;
+  top: -30px;
   left: 10px;
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 12px;
   color: black;
+}
+.conter span:hover {
+  text-decoration: underline;
 }
 
 .conter p {
   position: relative;
-  top: -50px;
-  left: 74px;
+  top: -40px;
+  left: 50px;
   width: 100px;
-  font-size: 12px;
-  color: black;
+  font-size: 11px;
+  color: rgb(112, 112, 112);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.but {
-   position: relative;
-   top: 10px;
-   left: 18px;
-   width: 215px;
-   height: 30px;
-   line-height: 5px;
-   text-align: center;
-   background: #f0eeee;
-   border-radius: 5px;
-   border: 1px solid #cccccc;
-}
-
-.but p {
-   color: black;
-   font-size: 12px;
-   font-weight: 600;
-}
-
-.but:hover {
-  background: #f8f8f8;
-}
 
   
 </style>

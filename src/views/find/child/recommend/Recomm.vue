@@ -1,18 +1,18 @@
 <template>
   <div class="recomm">
-    <recomm-swpper class="swpper" :dian="dian"></recomm-swpper>
-     <div class="beij"></div>
-    <div class="conter">
+    <div class="re-conter">
+     <div class="conter">
+      <recomm-swpper class="swpper" :dian="dian"></recomm-swpper>
       <recomm-nav :navTitle="navTitle"></recomm-nav>
       <hot-recomm :hotRecomm="hotRecomm"></hot-recomm>
       <new-nav></new-nav>
       <new-sale :newSales="newSales"></new-sale>
       <rank-list :rankLists="rankLists"></rank-list>
     </div>
-    <div class="recomm-leftlist">
+    <div class="left-recomm">
       <recoomm-left></recoomm-left>
     </div>
-    <Footer :footerList="footerList" class="footers"></Footer>
+    </div>
   </div>
 </template>
 <script>
@@ -24,7 +24,6 @@ import NewNav from "components/content/recommNav/NewNav";
 import HotRecomm from "./childs/HotRecomm";
 import NewSale from "./childs/NewSale";
 import RankList from "./childs/RankList";
-import Footer from "./childs/Footer";
 import RecoommLeft from './childs/RecoommLeft'
 
 export default {
@@ -36,7 +35,6 @@ export default {
     HotRecomm,
     NewSale,
     RankList,
-    Footer,
     RecoommLeft
   },
   data() {
@@ -215,47 +213,19 @@ export default {
           ],
         },
       ],
-      footerList: [
-        {
-          nav: [
-            "服务条款",
-            "隐私政策",
-            "儿童隐私政策",
-            "版权投诉指引",
-            "意见反馈",
-          ],
-        },
-        {
-          name: [
-            "网易版权所有@19997-2020  杭州乐读科技有限公司运营：浙网文[2018]3506-263号",
-          ],
-        },
-        {
-          phone: [
-            "违法和不良信息举报电话：0571-89853516  举报邮箱：ncm5990@163.com",
-          ],
-        },
-        {
-          wang: [
-            "粤B2-20090191-18",
-            "工业和信息化部备案管理系统网站",
-            "浙公网安备 3001902002564号",
-          ],
-        },
-      ],
     };
   },
 };
 </script>
 <style scoped>
 .recomm {
+  position: relative;
   width: 100%;
   background: #f0f0f0;
 }
 
 .conter {
-  height: 1500px;
-  width: 730px;
+  width: 729px;
   margin-left: 100px;
   border: 1px solid #cccccc;
   border-top: none;
@@ -268,19 +238,16 @@ export default {
   height: 284px;
   width: 730px;
   overflow: hidden;
-  margin-left: 100px;
 }
 
-.beij {
-  position: absolute;
-  top: 40px;
-  width: 100%;
-  height: 284px;
-  background: rgb(124, 228, 219);
-}
 
 .recomm-leftlist {
   position: relative;
   top: 0;
+}
+
+
+.re-conter {
+   display: flex;
 }
 </style>

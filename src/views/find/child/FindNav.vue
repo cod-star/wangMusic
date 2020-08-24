@@ -39,11 +39,16 @@ export default {
 <style scoped>
 
 .find-nav {
-  width: 600px;
+   width: 600px;
+   position: relative;
+   top: 10px;
 }
 
 .find {
   padding: 0 5px;
+  width: 50px;
+  height: 20px;
+  line-height: 20px;
   text-align: center;
   
 }

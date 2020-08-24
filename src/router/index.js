@@ -17,6 +17,8 @@ const Radio = () => import("views/find/child/radio/Radio")
 const Pelope = () => import("views/find/child/musicer/Pelope")
 const NewMusic = () => import("views/find/child/newmusic/NewMusic")
 
+
+
 Vue.use(VueRouter)
 
   const routes = [
@@ -39,7 +41,7 @@ Vue.use(VueRouter)
       },
       {
         path: 'rank',
-        component: Rank
+        component: Rank,
       },
       {
         path: 'song',

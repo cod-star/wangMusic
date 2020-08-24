@@ -4,11 +4,13 @@
       <div v-for="(item,index) in dian" class="recomm-imgs" 
       v-show="index === currentIndex"
       @mouseenter="stop()"
-     
       >
         <img :src="item.img" alt />
       </div>
     </swpper-item>
+    <div v-for="(item,index) in dian.length" class="beij"
+    v-show="index === currentIndex"
+    ></div>
     <div
       class="dians"
       v-for="(item,index) in dian.length"
@@ -47,14 +49,14 @@ export default {
   },
   methods: {
     // 开启定时器
-    // startTimer() {
-    //   this.timer = setInterval(() => {
-    //     this.currentIndex++;
-    //     if(this.currentIndex >= this.dian.length-1){
-    //       this.currentIndex = 0;
-    //     }
-    //   }, 3000);
-    // },
+    startTimer() {
+      this.timer = setInterval(() => {
+        this.currentIndex++;
+        if(this.currentIndex >= this.dian.length-1){
+          this.currentIndex = 0;
+        }
+      }, 3000);
+    },
     stop(){
       clearInterval(this.timer);
 
@@ -69,6 +71,10 @@ export default {
 };
 </script>
 <style scoped>
+
+.recomm-img{
+  width: 100%;
+}
 
 .recomm-imgs img {
   position: absolute;
@@ -99,5 +105,50 @@ export default {
 .dianActive {
   background: red;
 }
+
+.beij {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 284px;
+ 
+}
+
+.beij:nth-child(2) {
+  background: rgb(124, 228, 219);
+}
+
+.beij:nth-child(3) {
+  background: rgb(80, 108, 126);
+}
+
+.beij:nth-child(4) {
+  background: rgb(63, 63, 63)
+}
+
+.beij:nth-child(5) {
+  background: rgb(214, 213, 213);
+}
+
+.beij:nth-child(6) {
+  background: rgb(168, 222, 238);
+}
+
+.beij:nth-child(7) {
+  background: rgb(107, 146, 230);
+}
+
+.beij:nth-child(8) {
+  background: rgb(121, 125, 126);
+}
+
+.beij:nth-child(9) {
+  background: rgb(104, 147, 155);
+}
+
+.beij:nth-child(10) {
+  background: rgb(197, 197, 197);
+}
+
 
 </style>
